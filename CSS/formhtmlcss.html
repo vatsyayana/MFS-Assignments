@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h1 class="header">Registration Form</h1>
+    <p style="color: rgb(248, 240, 251)">Fields marked with an asterisk (*) are mandatory</p>
+    
+	<form>
+			<div class="sec">
+				<div class="sec-header">
+					<h3>Personal Details</h3>
+				</div>
+				<div class="container">
+					<div class="label-ip">
+						<span><label for="fname">First Name*</label></span>
+						<input type="text" id="fname" name="fname" size="30" required>
+					</div>
+					<div class="label-ip">
+						<span><label for="mname">Middle Name</label></span>
+						<input type="text" id="mname" name="mname" size="30">
+					</div>
+					<div class="label-ip">
+						<span><label for="lname">Last Name</label></span>
+						<input type="text" id="lname" name="lname" size="30">
+					</div>
+				</div>
+				<div class="container">
+					<div class="label-ip">
+						<span><label for="gender">Gender*</label></span>
+						<input type="radio" id="m" name="gender" value="Male" required>
+						<label for="m">Male </label>
+						<input type="radio" id="f" name="gender" value="Female" required>
+						<label for="f">Female </label>
+					</div>
+					<div class="label-ip">
+						<span><label for="dob">D. O. B.*</label></span>
+						<input type="date" id="dob" name="dob" required>
+					</div>
+					<div class="label-ip">
+						<span><label for="ph">Mobile No.*</label></span>
+						<input type="tel" id="ph" name="ph" placeholder="xxx-xxxxxxxxxx" pattern="[0-9]{3}-[0-9]{10}" maxlength="14" size="11" required>
+					</div>
+					<div class="label-ip">
+						<span><label for="aph">Alt. Mob. No.</label></span>
+						<input type="tel" id="aph" name="aph" placeholder="xxx-xxxxxxxxxx" pattern="[0-9]{3}-[0-9]{10}" maxlength="14" size="11">
+					</div>
+					<div class="label-ip">
+						<span><label for="mail">Email*</label></span>
+						<input type="email" id="mail" name="mail" placeholder="xyz@abcmail.com" size="20" required>
+					</div>
+				</div>
+				<div class="sec-header">
+					<h3>Communication Address Details</h3>
+				</div>
+				<div class="container">
+					<div class="label-ip">
+						<span><label for="addr1">Address Line 1*</label></span>
+						<input type="text" id="addr1" name="addr1" placeholder="House/Plot/Apartment No.,Street" size="50" required>
+					</div>
+					<div class="label-ip">
+						<span><label for="addr2">Address Line 2</label></span>
+						<input type="text" id="addr2" name="addr2" placeholder="Locality/Colony,Area,District"size="50">
+					</div>
+				</div>
+				<div class="container">
+					<div class="label-ip">
+						<span><label for="country">Country*</label></span>
+						<select id="country" name="country">
+							<option value="select">Select</option>
+							<option value="in">India</option>
+							<option value="us">USA</option>
+						</select>
+					</div>
+					<div class="label-ip">
+						<span><label for="state">State*</label></span>
+						<select id="state" name="state">
+							<option value="select">Select</option>
+							<option value="br">Bihar</option>
+							<option value="jk">J&K</option>
+							<option value="ny">New York</option>
+							<option value="la">Los Angeles</option>
+						</select>
+					</div>
+					<div class="label-ip">
+						<span><label for="zip">Zipcode*</label></span>
+						<input type="text" id="zip" name="zip" placeholder="123456" maxlength="6" size="6">
+					</div>
+				</div>
+				<div class="sec-header">
+					<h3>Educational Details</h3>
+				</div>
+				<div class="container">
+					<div class="label-ip">
+						<span><label for="xsch">Matriculation School</label></span>
+						<input type="text" id="xsch" name="xsch" size="40">
+					</div>
+					<div class="label-ip">
+						<span><label for="xboard">Matriculation Board</label></span>
+						<input type="text" id="xboard" name="xboard" size="40">
+					</div>
+					<div class="label-ip">
+						<span><label for="xscore">Matriculation Percentage</label></span>
+						<input type="text" id="xscore" name="xscore" size="40">
+					</div>
+				</div>
+				<div class="container">
+					<div class="label-ip">
+						<span><label for="xiisch">Intermediate School</label></span>
+						<input type="text" id="xiisch" name="xiisch" size="40">
+					</div>
+					<div class="label-ip">
+						<span><label for="xiiboard">Intermediate Board</label></span>
+						<input type="text" id="xiiboard" name="xiiboard" size="40">
+					</div>
+					<div class="label-ip">
+						<span><label for="xiiscore">Intermediate Percentage</label></span>
+						<input type="text" id="xiiscore" name="xiiscore" size="40">
+					</div>
+				</div>
+				<div class="container">
+					<div class="label-ip">
+						<span><label for="bclg">Graduation College</label></span>
+						<input type="text" id="bclg" name="bclg" size="40">
+					</div>
+					<div class="label-ip">
+						<span><label for="buni">Graduation University</label></span>
+						<input type="text" id="buni" name="buni" size="40">
+					</div>
+					<div class="label-ip">
+						<span><label for="bscore">Graduation Percentage</label></span>
+						<input type="text" id="bscore" name="bscore" size="40">
+					</div>
+				</div>
+			</div>
+	</form>
+</body>
+
+</html>
