@@ -1,0 +1,63 @@
+body{
+    background-color: rgb(128, 117, 255);
+    font-family: verdana;
+    margin: 0px;
+}
+
+.pageHeading{
+    text-align: center;
+    background-color: rgb(99, 32, 238);
+    color: rgb(248, 240, 251);
+    width: auto;
+    margin: 0px;
+}
+
+.pageContent{
+    margin: 8px;
+    border: 1px solid black;
+    padding: 8px;
+    background-color: rgb(248, 240, 251);
+    overflow: scroll;
+}
+
+.pageSubHeading{
+    width: 100%;
+    margin: 6px;
+    /* text-align: center; */
+}
+
+.flexContainer{
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 100%/3-30px;
+    /* justify-content: flex-start; */
+}
+
+.labelInputPair{
+    margin: 12px;
+}
+
+.labelInputPair > span{
+    display: block;
+}
+
+label{
+    font-size: 1.15em;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    margin: auto;
+    background-color: rgb(248, 240, 251);
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(99, 32, 238);
+    color: rgb(248, 240, 251);
+}
