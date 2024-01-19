@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<h1 class="pageHeading"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="25" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
+		<path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+	  </svg>Registration Form</h1>
+    <p id="note">Fields marked with an asterisk (<span id="redAsteriskInNote">*</span>) are mandatory</p>
+    
+	<form name="registrationForm" onsubmit="validateForm(event)">
+		<div class="pageContent">
+
+			<fieldset>
+				<legend>Personal Details</legend>
+				<div class="flexContainer">
+					<div class="subFlexContainer" id="names">
+						<div class="subSubFlexContainer" id="name">
+							<div class="labelInputPair">
+								<span><label for="txtFirstName" class="requiredLabel">First Name</label></span>
+								<input type="text" id="txtFirstName" name="txtFirstName" class="requiredInput">
+							</div>
+							<div class="labelInputPair">
+								<span><label for="txtMiddleName">Middle Name</label></span>
+								<input type="text" id="txtMiddleName" name="txtMiddleName">
+							</div>
+							<div class="labelInputPair">
+								<span><label for="txtLastName">Last Name</label></span>
+								<input type="text" id="txtLastName" name="txtLastName">
+							</div>
+						</div>
+						<div class="subSubFlexContainer" id="fathersAndMothersName">
+							<div class="labelInputPair">
+								<span><label for="txtFathersName" class="requiredLabel">Father's Name</label></span>
+								<input type="text" id="txtFathersName" name="txtFathersName" class="requiredInput">
+							</div>
+							<div class="labelInputPair">
+								<span><label for="txtMothersName" class="requiredLabel">Mothers's Name</label></span>
+								<input type="text" id="txtMothersName" name="txtMothersName" class="requiredInput">
+							</div>
+						</div>
+					</div>
+					<div class="labelInputPair">
+							<span><label for="txtGender" class="requiredLabel">Gender</label></span>
+							<input type="radio" id="m" name="txtGender" value="Male" class="requiredInput">
+							<label for="m">Male</label>
+							<input type="radio" id="f" name="txtGender" value="Female" class="requiredInput">
+							<label for="f">Female</label>
+					</div>	
+					<div class="labelInputPair">
+						<span><label for="dateDOB" class="requiredLabel">D. O. B.</label></span>
+						<input type="date" id="dateDOB" name="dateDOB" class="requiredInput" onblur="calculateAge()">
+					</div>
+					<div class="labelInputPair">
+						<span><label for="txtAge">Age</label></span>
+						<input type="text" id="txtAge" name="txtAge" class="requiredInput" inputmode="numeric" onblur="checkAge()">
+					</div>
+					<div class="labelInputPair">
+						<span><label for="telMobileNo" class="requiredLabel">Mobile No.</label></span>
+						<input type="tel" id="telMobileNo" name="telMobileNo" class="requiredInput" placeholder="+xxx-xxxxxxxxxx">
+					</div>
+					<div class="labelInputPair">
+						<span><label for="telAltMobileNo">Alt. Mob. No.</label></span>
+						<input type="tel" id="telAltMobileNo" name="telAltMobileNo" inputmode="numeric" placeholder="xxx-xxxxxxxxxx">
+					</div>
+					<div class="labelInputPair">
+						<span><label for="txtEmail" class="requiredLabel">Email</label></span>
+						<input type="text" id="txtEmail" name="txtEmail" class="requiredInput" placeholder="xyz@abcmail.com">
+					</div>
+					<div class="labelInputPair">
+						<span><label for="imagePicture">Upload your picture</label></span>
+						<input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+					</div>
+				</div>
+			</fieldset>
+
+			<div class="addressContainer">
+
+				<div class="addressSubContainer">
+					<fieldset>
+						<legend>Present Address Details</legend>
+						<div class="flexContainer" id="presentAddress">
+							<div class="subFlexContainer">
+								<div class="labelInputPair">
+									<span><label for="txtPresentAddress1" class="requiredLabel">Address Line 1</label></span>
+									<input type="text" id="txtPresentAddress1" name="presentAddress1" class="requiredInput" placeholder="House/Plot/Apartment No.,Street" size="30">
+								</div>
+								<div class="labelInputPair">
+									<span><label for="txtPresentAddress2">Address Line 2</label></span>
+									<input type="text" id="txtPresentAddress2" name="txtPresentAddress2" class="presentAddress" placeholder="Locality/Colony,Area,District" size="30">
+								</div>
+							</div>
+							<div class="subFlexContainer">
+								<div class="labelInputPair">
+									<span><label for="txtPresentCountry" class="requiredLabel">Country</label></span>
+									<select id="txtPresentCountry" name="txtPresentCountry" class="requiredInput">
+										<option value="" selected>Select</option>
+									</select>
+								</div>
+								<div class="labelInputPair">
+									<span><label for="txtPresentState" class="requiredLabel">State</label></span>
+									<select id="txtPresentState" name="txtPresentState" class="requiredInput">
+										<option val="" selected>Select</option>
+									</select>
+								</div>
+								<div class="labelInputPair">
+									<span><label for="txtPresentZip" class="requiredLabel">Zipcode</label></span>
+									<input type="text" id="txtPresentZip" name="txtPresentZip" class="requiredInput" inputmode="numeric" placeholder="123456">
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="addressSubContainer">
+					<fieldset>
+						<legend>Permanent Address Details</legend>
+						<input type="checkbox" id="checkboxForPermanentAddress" name="checkboxForPermanentAddress" onclick="copyPresentAddressToPermanentAddress()" size="30">
+						<label for="checkboxForPermanentAddress" id="checkboxLabel">Same as present address</label>
+						<div class="flexContainer">
+							<div class="subFlexContainer">
+								<div class="labelInputPair">
+									<span><label for="txtPermanentAddress1" class="requiredLabel">Address Line 1</label></span>
+									<input type="text" id="txtPermanentAddress1" name="txtPermanentAddress1" class="requiredInput" placeholder="House/Plot/Apartment No.,Street" size="30" >
+								</div>
+								<div class="labelInputPair">
+									<span><label for="txtPermanentAddress2">Address Line 2</label></span>
+									<input type="text" id="txtPermanentAddress2" name="txtPermanentAddress2" placeholder="Locality/Colony,Area,District"size="30">
+								</div>
+							</div>
+							<div class="subFlexContainer">
+								<div class="labelInputPair">
+									<span><label for="txtPermanentCountry" class="requiredLabel">Country</label></span>
+									<select id="txtPermanentCountry" name="txtPermanentCountry" class="requiredInput">
+										<option value="" selected="selected">Select</option>
+										<option value="in">India</option>
+										<option value="us">USA</option>
+									</select>
+								</div>
+								<div class="labelInputPair">
+									<span><label for="txtPermanentState" class="requiredLabel">State</label></span>
+									<select id="txtPermanentState" name="txtPermanentState" class="requiredInput">
+										<option value="" selected>Select</option>
+										<option value="br">Bihar</option>
+										<option value="jk">J&K</option>
+										<option value="ny">New York</option>
+										<option value="la">Los Angeles</option>
+									</select>
+								</div>
+								<div class="labelInputPair">
+									<span><label for="txtPermanentZip" class="requiredLabel">Zipcode</label></span>
+									<input type="text" id="txtPermanentZip" name="txtPermanentZip" class="requiredInput" inputmode="numeric" placeholder="123456">
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+
+			<!-- <div class="pageSubHeading">
+				<h3>Educational Details</h3>
+			</div>
+			<div class="gridContainer">
+				<div class="row1">Level</div>
+				<div class="row1">Institution</div>
+				<div class="row1">Board/University</div>
+				<div class="row1">Percentage/Grade</div> -->
+
+				<!-- <table class="labelInputPair">
+					<tr>
+						<th>Level</th>
+						<th>Institution</th>
+						<th>Board/University</th>
+						<th>Percentage/Grade</th>
+					</tr>
+					<tr>
+						<td>Matriculation</td>
+						<td><input type="text" id="txtMatriculationInstitution" name="txtMatriculationInstitution"></td>
+						<td><input type="text" id="txtMatriculationBoard" name="txtMatriculationBoard"></td>
+						<td><input type="text" id="txtMatriculationScore" name="txtMatriculationScore"></td>
+					</tr>
+					<tr>
+						<td>Intermediate</td>
+						<td><input type="text" id="txtIntermediateInstitution" name="txtIntermediateInstitution"></td>
+						<td><input type="text" id="txtIntermediateBoard" name="txtIntermediateBoard"></td>
+						<td><input type="text" id="txtIntermediateScore" name="txtIntermediateScore"></td>
+					</tr>
+					<tr>
+						<td>Graduation</td>
+						<td><input type="text" id="txtGraduationInstitution" name="txtGraduationInstitution"></td>
+						<td><input type="text" id="txtGraduationUniversity" name="txtGraduationUniversity"></td>
+						<td><input type="text" id="txtGraduationScore" name="txtGraduationScore"></td>
+					</tr>
+				</table> -->
+		</div>
+
+		<div>
+			<button type="submit"><b>Submit</b></button>
+		</div>
+	</form>
+</body>
+
+</html>
